@@ -1,0 +1,63 @@
+-- 1. Create Database
+CREATE DATABASE IF NOT EXISTS shopping_nlp;
+USE shopping_nlp;
+
+-- 2. Create Products Table
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(255),
+    price DOUBLE NOT NULL,
+    category VARCHAR(50),
+    rank_score INT DEFAULT 0
+);
+
+-- 3. Create Reviews Table
+CREATE TABLE IF NOT EXISTS reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    review_text VARCHAR(500),
+    sentiment VARCHAR(50),
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+-- 4. Insert 30 Products
+
+-- Electronics
+INSERT INTO products (name, description, price, category) VALUES
+('Laptop', 'HP Pavilion 15 with 8GB RAM', 75000, 'Electronics'),
+('Smartphone', 'Samsung Galaxy S21', 55000, 'Electronics'),
+('Tablet', 'Apple iPad 9th Gen 64GB', 30000, 'Electronics'),
+('Smartwatch', 'Amazfit Bip U Pro', 4500, 'Electronics'),
+('Bluetooth Speaker', 'JBL Flip 5', 8000, 'Electronics'),
+('Headphones', 'Sony WH-1000XM4 Noise Cancelling', 22000, 'Electronics'),
+('Camera', 'Canon EOS 1500D DSLR', 40000, 'Electronics'),
+('Monitor', 'Dell 24-inch Full HD', 12000, 'Electronics'),
+('Keyboard', 'Logitech Wireless Keyboard', 1500, 'Electronics'),
+('Mouse', 'HP Wireless Mouse', 800, 'Electronics');
+
+-- Grocery
+INSERT INTO products (name, description, price, category) VALUES
+('Rice 5kg', 'Premium basmati rice', 450, 'Grocery'),
+('Sugar 1kg', 'Refined white sugar', 50, 'Grocery'),
+('Milk 1L', 'Fresh cow milk', 60, 'Grocery'),
+('Bread', 'Whole wheat bread loaf', 40, 'Grocery'),
+('Eggs 12pcs', 'Farm fresh eggs', 75, 'Grocery'),
+('Tea Powder 500g', 'Strong Assam Tea', 200, 'Grocery'),
+('Coffee 200g', 'Instant Coffee Jar', 180, 'Grocery'),
+('Cooking Oil 1L', 'Refined Sunflower Oil', 160, 'Grocery'),
+('Salt 1kg', 'Iodized Salt', 20, 'Grocery'),
+('Wheat Flour 5kg', 'Aashirvaad Atta', 250, 'Grocery');
+
+-- Household
+INSERT INTO products (name, description, price, category) VALUES
+('Toothpaste 150g', 'Colgate Strong Teeth', 90, 'Household'),
+('Shampoo 650ml', 'Dove Intense Repair', 350, 'Household'),
+('Soap 4pcs', 'Lifebuoy Antibacterial Soap', 140, 'Household'),
+('Detergent 1kg', 'Surf Excel Easy Wash', 120, 'Household'),
+('Dishwashing Liquid 500ml', 'Vim Lemon Dishwash', 110, 'Household'),
+('Floor Cleaner 1L', 'Lizol Citrus Fresh', 180, 'Household'),
+('Hair Oil 200ml', 'Parachute Coconut Oil', 160, 'Household'),
+('Hand Wash 250ml', 'Dettol Antibacterial Handwash', 95, 'Household'),
+('Tissue Paper 100 sheets', 'Soft Facial Tissues', 75, 'Household'),
+('Mosquito Repellent 45ml', 'Good Knight Refill Pack', 80, 'Household');

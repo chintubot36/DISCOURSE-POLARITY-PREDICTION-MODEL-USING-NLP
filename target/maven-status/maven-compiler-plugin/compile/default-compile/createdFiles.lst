@@ -1,0 +1,12 @@
+com\review\nlp\package-info.class
+com\shoppingcartnlp\model\Review.class
+com\review\service\ProductRankingService.class
+com\review\dao\ProductDAO.class
+com\review\dao\ReviewDAO.class
+com\review\main\MainApp.class
+com\shoppingcartnlp\model\Product.class
+com\review\db\DBConnection.class
+com\review\service\ProductRankingService$ProductScore.class
+com\review\nlp\NLPSentimentAnalyzer.class
+com\review\service\package-info.class
+com\review\main\package-info.class
