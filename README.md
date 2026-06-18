@@ -33,4 +33,4 @@ This project is a Java-based application that analyzes product reviews using sen
 - Deploy as web application
 
 ## 👨‍💻 Author
-Nitheesh Kommuri
+KUMBAM SAI KIRAN
